@@ -4,119 +4,102 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My First Static Website</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS directly inside HTML -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #0f172a; /* dark background */
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    header {
+      background: #1f2937;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 15px;
+      padding: 6px 10px;
+      border-radius: 5px;
+    }
+    nav a:hover { background: #374151; }
+    section {
+      padding: 40px 20px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #60a5fa55, #34d39955);
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 { margin-bottom: 10px; font-size: 2rem; }
+    .btn {
+      background: linear-gradient(135deg, #60a5fa, #34d399);
+      color: #081018;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #1f2937;
+      color: #9ca3af;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">MySite</h1>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <!-- Required external links -->
-        <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
-      </nav>
-      <button class="menu-btn" aria-label="Toggle Menu">☰</button>
-    </div>
+  <!-- Header -->
+  <header>
+    <h1>MySite</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <!-- External links -->
+      <a href="https://www.google.com" target="_blank">Google</a>
+      <a href="https://www.youtube.com" target="_blank">YouTube</a>
+    </nav>
   </header>
 
-  <!-- Hero / Home -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="container">
-      <h2>Welcome to my beginner website 👋</h2>
-      <p>This is a simple static site using just HTML & CSS.</p>
-      <a class="btn" href="#projects">See Projects</a>
-    </div>
+    <h2>Welcome to my beginner website 👋</h2>
+    <p>This page is styled using CSS inside HTML itself.</p>
+    <a class="btn" href="#about">Learn More</a>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container grid-2">
-      <div>
-        <h3>About Me</h3>
-        <p>
-          I’m learning web development! This page is built with semantic HTML,
-          a separate CSS file, and a responsive layout.
-        </p>
-      </div>
-      <div class="card">
-        <h4>Quick Facts</h4>
-        <ul>
-          <li>Built with pure HTML & CSS</li>
-          <li>Mobile-friendly</li>
-          <li>No frameworks</li>
-        </ul>
-      </div>
-    </div>
+  <!-- About Section -->
+  <section id="about">
+    <h3>About Me</h3>
+    <p>
+      I’m learning web development! This is a static site made with just
+      <strong>HTML + CSS</strong> inside one file.
+    </p>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section alt">
-    <div class="container">
-      <h3>Projects</h3>
-      <div class="cards">
-        <article class="card">
-          <h4>Project One</h4>
-          <p>A simple landing page layout.</p>
-          <a class="link" href="#contact">Ask me about it →</a>
-        </article>
-        <article class="card">
-          <h4>Project Two</h4>
-          <p>A sample portfolio grid.</p>
-          <a class="link" href="#contact">Ask me about it →</a>
-        </article>
-        <article class="card">
-          <h4>Project Three</h4>
-          <p>Form with basic styling.</p>
-          <a class="link" href="#contact">Ask me about it →</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h3>Contact</h3>
-      <form class="contact-form" action="#" method="get">
-        <label>
-          Name
-          <input type="text" name="name" placeholder="Your name" required />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" placeholder="you@example.com" required />
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" placeholder="Type your message..."></textarea>
-        </label>
-        <button class="btn" type="submit">Send</button>
-      </form>
-      <p class="muted">
-        Tip: The form above doesn’t actually send anywhere yet (it’s a static site).
-      </p>
-    </div>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>You can reach me anytime via email. (This is just demo text 😊)</p>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> MySite. Built with ❤️ using HTML & CSS.</small>
-    </div>
+  <footer>
+    <small>© <span id="year"></span> MySite | Built with ❤️ using HTML & CSS</small>
   </footer>
 
-  <!-- Tiny script just to update the year (optional) -->
   <script>
+    // Show current year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Mobile menu toggle (optional)
-    const btn = document.querySelector('.menu-btn');
-    const nav = document.querySelector('.nav');
-    btn.addEventListener('click', () => nav.classList.toggle('open'));
   </script>
 </body>
 </html>
